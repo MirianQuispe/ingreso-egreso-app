@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ingreso-egreso-app-da71e": {
+      "hosting": {
+        "ingresoEgresoApp": [
+          "ingreso-egreso-app-da71e"
+        ]
+      }
+    }
+  }
+}
