@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,6 +10,7 @@ export class AuthService {
 
   constructor(public auth: AngularFireAuth) { }
 
+  // Para obtener informacion del usuario autenticado/activo en firebase
   initAuthListener(){
     this.auth.authState.subscribe( fuser => {
       console.log(fuser?.uid);
@@ -25,5 +28,11 @@ export class AuthService {
 
   logout(){
     return this.auth.signOut();
+  }
+
+  isAuth(){
+    return this.auth.authState.pipe(
+               map( fuser => fuser != null )
+            );
   }
 }
