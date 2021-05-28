@@ -8,7 +8,7 @@
                 <form [formGroup]="loginForm"
                       (ngSubmit)="loginUsuario()">
                   <div class="form-group">
-                    <label class="label">Usuario</label>
+                    <label class="label">Correo Usuario</label>
                     <div class="input-group">
                       <input type="email" 
                               class="form-control" 
@@ -17,7 +17,7 @@
                               aria-describedby="basic-email">
                       <div class="input-group-append" style="height: 38px;">
                         <span class="input-group-text" id="basic-email">
-                          <i class="fa fa-check-circle"></i>
+                          <i *ngIf="loginForm.get('correo').valid" class="fa fa-check-circle"></i>
                         </span>
                       </div>
                     </div>
@@ -28,13 +28,13 @@
                       <input type="password" class="form-control" formControlName="password" placeholder="*********">
                       <div class="input-group-append" style="height: 38px;">
                         <span class="input-group-text">
-                          <i class="fa fa-check-circle"></i>
+                          <i *ngIf="loginForm.get('password').valid" class="fa fa-check-circle"></i>
                         </span>
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-primary submit-btn btn-block">Login</button>
+                    <button class="btn btn-primary submit-btn btn-block submit">Login</button>
                   </div>
                   
                   
