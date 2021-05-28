@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
     .then( credenciales => {
       console.log(credenciales);
       Swal.close();
-      this.router.navigateByUrl("/login");
+      this.router.navigateByUrl("/");
 
     })
     .catch( err => {
